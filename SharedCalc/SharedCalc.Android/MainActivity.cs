@@ -14,7 +14,8 @@ namespace SharedCalc.Droid
 	{
 		int count = 1;
 
-        private ICalculation c = new ServerCalculation("http://198.168.0.103:9999");
+        private ICalculation c = new LocalCalculation();
+        //private ICalculation c = new ServerCalculation("http://198.168.0.103:9999");
 
 
         protected override void OnCreate (Bundle bundle)
