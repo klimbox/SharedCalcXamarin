@@ -39,7 +39,9 @@ namespace UITestCalc
         [Test]
         public void Simple()
         {
-            app.Tap(cs.btn0);
+            app.Tap(cs.btn1);
+            app.Tap(cs.btnAdd);
+            app.Tap(cs.btn3);
             //app.Query(cs.Screen.)
             //app.Query(c => c.Id("tbScreen").Text);
         }
