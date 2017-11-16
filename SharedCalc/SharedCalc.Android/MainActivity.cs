@@ -14,7 +14,10 @@ namespace SharedCalc.Droid
 	{
 		int count = 1;
 
-		protected override void OnCreate (Bundle bundle)
+        private ICalculation c = new ServerCalculation("http://198.168.0.103:9999");
+
+
+        protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
@@ -58,7 +61,9 @@ namespace SharedCalc.Droid
                 int r = 0;
                 try
                 {
-                    r = CountFromString.Input(Screen.Text);
+                    //r = CountFromString.Input(Screen.Text);
+                    string[] inp = Screen.Text.Split(' ');
+                    r = c.Calculate(inp[0], inp[2], inp[1]);
                     Screen.Text = r.ToString();
                 }
                 catch (System.Exception)
